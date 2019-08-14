@@ -14,7 +14,6 @@ export MERB_ENV=test
 #install:
 bundle install
 npm install
-npm install --global yarn
 yarn install
 
 #before_script:
