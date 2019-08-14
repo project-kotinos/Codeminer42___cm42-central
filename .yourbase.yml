@@ -15,3 +15,4 @@ dependencies:
   build:
   - ruby:2.6.0
   - node:10.15.1
+  - yarn:1.17.3
