@@ -21,10 +21,12 @@ yarn install
 cp config/database.yml.example config/database.yml
 cp .env.sample .env
 wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
+mkdir -p ~/bin
 unzip chromedriver_linux64.zip
 ln -s chromedriver ~/bin/chromedriver
+PATH=$PATH:~/bin
 "export DISPLAY=:99.0"
-"sh -e /etc/init.d/xvfb start"
+# "sh -e /etc/init.d/xvfb start"
 "bundle exec rake --trace fulcrum:setup db:setup"
 
 #script:
