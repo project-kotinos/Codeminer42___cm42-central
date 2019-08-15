@@ -25,10 +25,10 @@ mkdir -p ~/bin
 unzip chromedriver_linux64.zip
 ln -s chromedriver ~/bin/chromedriver
 PATH=$PATH:~/bin
-"export DISPLAY=:99.0"
+# "export DISPLAY=:99.0"
 # "sh -e /etc/init.d/xvfb start"
-"bundle exec rake --trace fulcrum:setup db:setup"
+bundle exec rake --trace fulcrum:setup db:setup
 
 #script:
-"bundle exec rake travis"
-"bundle exec codeclimate-test-reporter"
+bundle exec rake travis
+bundle exec codeclimate-test-reporter
