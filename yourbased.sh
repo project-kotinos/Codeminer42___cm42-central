@@ -24,7 +24,7 @@ cp .env.sample .env
 wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
 mkdir -p ~/bin
 unzip chromedriver_linux64.zip
-ln -s chromedriver ~/bin/chromedriver
+cp chromedriver ~/bin/chromedriver
 PATH=$PATH:~/bin
 echo $PATH
 chmod +x chromedriver
