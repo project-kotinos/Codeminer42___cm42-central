@@ -8,7 +8,7 @@ Capybara.register_driver :chrome do |app|
       args: %w[ no-sandbox headless disable-popup-blocking disable-gpu disable-infobars window-size=1280,1024]
     }
   )
-  Selenium::WebDriver::Chrome.driver_path = "chromedriver"
+  Selenium::WebDriver::Chrome.driver_path = "~/bin/chromedriver"
   client = Selenium::WebDriver::Remote::Http::Default.new(read_timeout: 120)
 
   Capybara::Selenium::Driver.new(
