@@ -11,7 +11,7 @@ export RAILS_ENV=test
 export RACK_ENV=test
 export MERB_ENV=test
 
-apt-get update && apt-get install -y tzdata libpq-dev
+apt-get update && apt-get install -y tzdata libpq-dev unzip
 #install:
 bundle install
 npm install
