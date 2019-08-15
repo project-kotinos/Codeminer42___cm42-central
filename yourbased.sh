@@ -17,6 +17,7 @@ bundle install
 npm install
 yarn install
 
+
 #before_script:
 cp config/database.yml.example config/database.yml
 cp .env.sample .env
@@ -25,6 +26,9 @@ mkdir -p ~/bin
 unzip chromedriver_linux64.zip
 ln -s chromedriver ~/bin/chromedriver
 PATH=$PATH:~/bin
+chmod +x chromedriver
+
+export webdriver.chrome.driver=./chromedriver
 # "export DISPLAY=:99.0"
 # "sh -e /etc/init.d/xvfb start"
 bundle exec rake --trace fulcrum:setup db:setup
