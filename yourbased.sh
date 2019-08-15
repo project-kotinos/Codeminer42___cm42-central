@@ -19,7 +19,9 @@ yarn install
 #before_script:
 cp config/database.yml.example config/database.yml
 cp .env.sample .env
-ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
+wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+ln -s chromedriver ~/bin/chromedriver
 "export DISPLAY=:99.0"
 "sh -e /etc/init.d/xvfb start"
 "bundle exec rake --trace fulcrum:setup db:setup"
