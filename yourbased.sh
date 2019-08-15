@@ -26,9 +26,9 @@ mkdir -p ~/bin
 unzip chromedriver_linux64.zip
 ln -s chromedriver ~/bin/chromedriver
 PATH=$PATH:~/bin
+echo $PATH
 chmod +x chromedriver
 
-export webdriver.chrome.driver=./chromedriver
 # "export DISPLAY=:99.0"
 # "sh -e /etc/init.d/xvfb start"
 bundle exec rake --trace fulcrum:setup db:setup
