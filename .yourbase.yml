@@ -7,6 +7,21 @@ build_targets:
   name: default
   environment:
   - DB=postgresql
+  - DB_USERNAME=root
+  - DB_PASSWORD=root
+  - DB_HOST={{ .Containers.IP "db" }}
+#   - DATABASE_URL=postgres://ci:ci@{{ .Containers.IP "db" }}:5432/travis_ci_test
+  dependencies:
+      containers:
+        db:
+          image: postgres:9.4
+          environment:
+            - POSTGRES_PASSWORD=root
+            - POSTGRES_USER=root
+            - POSTGRES_DB=travis_ci_test
+          port_check:
+            port: 5432
+            timeout: 45
 ci:
   builds:
   - build_target: default
