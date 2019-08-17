@@ -10,9 +10,15 @@ build_targets:
   - DB_USERNAME=root
   - DB_PASSWORD=root
   - DB_HOST={{ .Containers.IP "db" }}
+  - REDISCLOUD_URL=redis://{{ .Containers.IP "redis" }}:6379/
 #   - DATABASE_URL=postgres://ci:ci@{{ .Containers.IP "db" }}:5432/travis_ci_test
   dependencies:
       containers:
+        redis:
+          image: redis:latest
+          port_check:
+            port: 6379
+            timeout: 20
         db:
           image: postgres:9.4
           environment:
