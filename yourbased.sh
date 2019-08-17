@@ -22,12 +22,12 @@ yarn install
 cp config/database.yml.example config/database.yml
 cp .env.sample .env
 wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
-mkdir -p ~/bin
+mkdir -p /opt/bin
 unzip chromedriver_linux64.zip
-cp chromedriver ~/bin/chromedriver
-PATH=$PATH:~/bin
-echo $PATH
-chmod +x chromedriver
+cp chromedriver /opt/bin/chromedriver
+export PATH="$PATH:/opt/bin"
+echo "PATH IS $PATH"
+chmod +x /opt/bin/chromedriver
 
 # "export DISPLAY=:99.0"
 # "sh -e /etc/init.d/xvfb start"
